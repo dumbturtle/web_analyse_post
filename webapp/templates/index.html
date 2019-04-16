@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+	<title>{{ page_title }}</title>
+</head>
+
+<body>
+
+	<div class="container">
+		<h2>{{ page_title }}</h2>
+	</div>
+	<h2>Языковая модель</h2>
+	<form action = '/lm_n/' method="POST">
+		<input type="hidden" name="lm_p">
+		<input name="lm_text">
+    <input type="submit"  value="OK">
+	</form>
+	<h3>{{ lm_answer }}</h3>
+
+	<h2>Предсказать рейтинг</h2>
+		<form action="/class_n/" method="POST">
+		<input name="class_text">
+    <input type="submit"  value="OK">
+	</form>
+ 	<h3>{{ class_answer }}</h3>
+
+	</div>
+	</div>
+
+</body>
+
+</html>
