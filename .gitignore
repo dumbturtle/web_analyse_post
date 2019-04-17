@@ -16,4 +16,6 @@ test.py
 /Исходные данные/
 /class/
 /lm/
+/webapp/class/
+/webapp/language_model/
 __pycache__/
