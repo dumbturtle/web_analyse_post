@@ -19,3 +19,4 @@ test.py
 /webapp/class/
 /webapp/language_model/
 __pycache__/
+!requirements.txt
