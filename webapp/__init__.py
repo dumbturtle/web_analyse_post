@@ -22,22 +22,16 @@ def create_app():
 		title = app.config['TITLE']
 		if index == 'lm_n':
 			lm_text = request.form['lm_text']
-			if lm_text:
-				lm_text_nlp = language_model.predict(lm_text, n_words=10)
-				save_lm_nlp(lm_text_nlp)
-				lm_text_nlp = get_lm_nlp()
-			else:
-				lm_text_nlp = "Введите что-нибудь!"
+			lm_text_nlp = language_model.predict(lm_text, n_words=10)
+			save_lm_nlp(lm_text_nlp)
+			lm_text_nlp = get_lm_nlp()
 			return render_template('index.html', page_title=title, lm_answer_db = lm_text_nlp, class_nlp_answer_db = get_class_nlp())
 		elif index == 'class_n':
 			post_url = request.form['post_url']
-			if post_url:
-				post_test = requesting_data(post_url)
-				class_text = classification_model.predict(post_test)
-				class_text = '{}'.format(class_text)
-				save_class_nlp(post_url,post_test,class_text)
-				class_text = get_class_nlp()
-			else:
-				class_text = 'Введите что-нибудь!'
+			post_test = requesting_data(post_url)
+			class_text = classification_model.predict(post_test)
+			class_text = '{}'.format(class_text)
+			save_class_nlp(post_url,post_test,class_text)
+			class_text =  get_class_nlp()
 			return render_template('index.html', page_title=title, lm_answer_db = get_lm_nlp(), class_nlp_answer_db = class_text)
 	return app 

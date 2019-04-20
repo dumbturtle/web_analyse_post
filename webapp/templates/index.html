@@ -21,25 +21,24 @@
 	<h2>Языковая модель</h2>
 	<form action = '/lm_n/' method="POST">
 		<input type="hidden" name="lm_p">
-		<input name="lm_text">
+		<input name="lm_text" required>
     <input type="submit"  value="OK">
 	</form>
-	<p>{{ lm_answer }}</p>
-	<p>
+		<p>
 		{% for text_lm in lm_answer_db %}
 		<div class="border-top border-bottom">
 		<p> {{text_lm.text}} </p>
 		</div>
 		{% endfor %}	
 	</p>
+
 	</div>
 <div class="col-8">
 	<h2>Предсказать рейтинг</h2>
 		<form action="/class_n/" method="POST">
-		<input name="post_url">
+		<input name="post_url" required>
     <input type="submit"  value="OK">
 	</form>
-	
 	 <p>
 		{% for text_class_nlp in class_nlp_answer_db %}
 		<div class="border-top border-bottom"></div>
@@ -47,7 +46,7 @@
 		{% endfor %}
 	</div>	
 	</p>
-	
+
 </div>
 	</div>
 	</div>
